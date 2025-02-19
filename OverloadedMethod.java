@@ -44,6 +44,9 @@ public class OverloadedMethod {
 
     public static double convertToCentimeters(int Inches,int Feet){
         
-        return ((Feet * 12) + Inches) * 2.54;
+        int feetToInches = Feet * 12;
+        int totalInches = feetToInches + Inches;
+        double result = convertToCentimeters(totalInches);
+        return result;
     }
 }

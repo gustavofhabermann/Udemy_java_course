@@ -55,7 +55,7 @@ public class SecondsAndMinutesChallenge {
         }
 
         if(seconds < 0 || seconds > 59){
-            return "Invalid data dor segunds(" + seconds + "), must be a number between 0 and 59";
+            return "Invalid data for segunds(" + seconds + "), must be a number between 0 and 59";
         }
 
         

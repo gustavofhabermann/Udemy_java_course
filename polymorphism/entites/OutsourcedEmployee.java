@@ -1,4 +1,4 @@
-package polynorphism.entites;
+package polymorphism.entites;
 
 public class OutsourcedEmployee  extends Employee{
 

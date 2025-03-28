@@ -1,11 +1,11 @@
-package polynorphism.application;
+package polymorphism.application;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import polynorphism.entites.Employee;
-import polynorphism.entites.OutsourcedEmployee;
+import polymorphism.entites.Employee;
+import polymorphism.entites.OutsourcedEmployee;
 
 public class Program {
 

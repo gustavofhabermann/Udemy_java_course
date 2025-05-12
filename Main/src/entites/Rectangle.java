@@ -1,6 +1,6 @@
-package ClassMethodAbstract.entites;
+package entites;
 
-import ClassMethodAbstract.entites_enum.Color;
+import entites_enum.Color;
 
 
 public class Rectangle extends Shape {

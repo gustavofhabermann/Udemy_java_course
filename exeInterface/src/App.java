@@ -22,7 +22,6 @@ public class App {
         double totalValue = sc.nextDouble();
 
         Contract contract = new Contract(number, date, totalValue);
-
         System.out.print("Entre com o número de parcelas: ");
         int n = sc.nextInt();
 

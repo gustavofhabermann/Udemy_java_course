@@ -1,5 +1,5 @@
 package com.testespring.curse.entites;
 
-public class order {
+public class Order {
     
 }

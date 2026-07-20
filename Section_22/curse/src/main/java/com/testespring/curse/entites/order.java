@@ -1,7 +1,6 @@
 package com.testespring.curse.entites;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.testespring.curse.entites.User;
 import com.testespring.curse.entites.enums.OrderStatus;
 
 import jakarta.persistence.Entity;

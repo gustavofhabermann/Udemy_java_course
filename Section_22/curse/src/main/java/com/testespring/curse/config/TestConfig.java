@@ -10,10 +10,12 @@ import org.springframework.context.annotation.Profile;
 
 import com.testespring.curse.entites.Category;
 import com.testespring.curse.entites.Order;
+import com.testespring.curse.entites.OrderItem;
 import com.testespring.curse.entites.Product;
 import com.testespring.curse.entites.User;
 import com.testespring.curse.entites.enums.OrderStatus;
 import com.testespring.curse.repositories.CategoryRepository;
+import com.testespring.curse.repositories.OrderItemRepository;
 import com.testespring.curse.repositories.OrderRepository;
 import com.testespring.curse.repositories.ProductRepository;
 import com.testespring.curse.repositories.UserRepository;
@@ -33,6 +35,9 @@ public class TestConfig implements CommandLineRunner {
 
     @Autowired
     private ProductRepository productRepository; 
+
+    @Autowired
+    private OrderItemRepository orderItemRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -71,6 +76,13 @@ public class TestConfig implements CommandLineRunner {
         Order o4 = new Order(null, Instant.parse("2026-06-16T15:15:40Z"), OrderStatus.PAID, u2);
 
         orderRepository.saveAll(Arrays.asList(o1,o2,o3,o4));
+
+        OrderItem oi1 = new OrderItem(o1, p1, 2, p1.getPrice());
+        OrderItem oi2 = new OrderItem(o1, p3, 1, p3.getPrice());
+        OrderItem oi3 = new OrderItem(o2, p3, 3, p3.getPrice());
+        OrderItem oi4 = new OrderItem(o3, p5, 2, p5.getPrice());
+
+        orderItemRepository.saveAll(Arrays.asList(oi1,oi2,oi3,oi4));
 
 
     }

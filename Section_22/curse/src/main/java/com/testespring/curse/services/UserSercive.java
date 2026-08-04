@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.testespring.curse.entites.User;
 import com.testespring.curse.repositories.UserRepository;
+import com.testespring.curse.services.exceptions.ResourceNotFoundException;
 
 @Service
 public class UserSercive {
@@ -21,7 +22,7 @@ public class UserSercive {
 
     public User findById(Long id){
         Optional<User> obj = repository.findById(id);
-        return obj.get();
+        return obj.orElseThrow(() -> new ResourceNotFoundException(id));
     }
 
     public User insert(User obj){
@@ -42,8 +43,7 @@ public class UserSercive {
         entity.setName(obj.getName());
         entity.setEmail(obj.getEmail());
         entity.setPhone(obj.getPhone());
+
     }
-
-
 
 }

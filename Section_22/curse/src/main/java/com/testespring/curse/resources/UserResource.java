@@ -16,6 +16,8 @@ import com.testespring.curse.entites.User;
 import com.testespring.curse.services.UserSercive;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 
 
@@ -49,6 +51,12 @@ public class UserResource {
     public ResponseEntity<Void> delete(@PathVariable Long id){
         sercive.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User obj){
+        obj = sercive.update(id, obj);
+        return ResponseEntity.ok().body(obj);
     }
     
     
